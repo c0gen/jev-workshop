@@ -1,0 +1,39 @@
+# Dependencies and generated output
+node_modules/
+out/
+release/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Local test profiles, reports, and application data
+.test-data/
+playwright-report/
+test-results/
+credentials.bin
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# Local secrets and signing material
+.env*
+!.env.example
+!.env.template
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and editor/OS files
+*.log
+.idea/
+*.suo
+*.user
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini

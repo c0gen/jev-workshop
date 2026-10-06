@@ -1,0 +1,10 @@
+# Keep text consistent with .editorconfig across platforms.
+* text=auto eol=lf
+
+# Windows command scripts need CRLF when checked out.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Application icons are binary assets.
+*.png binary
+*.ico binary

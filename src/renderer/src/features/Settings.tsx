@@ -171,7 +171,7 @@ export function Settings({
       </section>
       <div className="about-row">
         <span>
-          Jev Playground <strong>1.0.0</strong>
+          Jev Workshop <strong>1.0.0</strong>
         </span>
         <span>Personal workspace · Windows</span>
       </div>

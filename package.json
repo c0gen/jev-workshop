@@ -1,8 +1,8 @@
 {
-  "name": "jev-playground",
+  "name": "jev-workshop",
   "version": "1.0.0",
   "description": "A personal Windows workspace for TypeSafe Jev experiments",
-  "author": "Jev Playground",
+  "author": "Jev Workshop",
   "private": true,
   "type": "module",
   "main": "out/main/index.js",
@@ -49,7 +49,7 @@
   },
   "build": {
     "appId": "local.jev.playground",
-    "productName": "Jev Playground",
+    "productName": "Jev Workshop",
     "directories": {
       "output": "release"
     },

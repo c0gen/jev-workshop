@@ -1,10 +1,10 @@
-# Jev Playground
+# Jev Workshop
 
 A personal Windows desktop workspace for experimenting with TypeSafe Jev. Build requests with forms or JSON, inspect probabilities, compare saved runs, and try local acceptance thresholds.
 
 ## Using the app
 
-Install **Jev Playground Setup 1.0.0.exe** from `release/`, then open **Jev Playground** from the Start menu. The installer is per-user and bundles its runtime; Node.js is not needed to use the installed application.
+Install **Jev Workshop Setup 1.0.0.exe** from `release/`, then open **Jev Workshop** from the Start menu. The installer is per-user and bundles its runtime; Node.js is not needed to use the installed application.
 
 1. Start with **Message routing**, or select **New experiment** for four editable examples.
 2. Open **Settings**, paste your TypeSafe API key, and choose **Save & test connection**. Connection testing lists models and does not evaluate your input.
@@ -18,7 +18,7 @@ Use **Get code** to copy Python or TypeScript HTTP examples. These use the `TYPE
 
 ## Local data and backups
 
-- Experiments, preferences, and history live in `library.sqlite` under Electron's **Jev Playground** user-data directory (normally `%APPDATA%\Jev Playground`).
+- Experiments, preferences, and history live in `library.sqlite` under `%APPDATA%\Jev Playground`. Jev Workshop keeps the original data directory so existing libraries and saved keys remain available after the rename.
 - The key is stored separately in `credentials.bin`, protected by Windows DPAPI through Electron `safeStorage`. Settings can replace or remove it. Windows protection is tied to your Windows account; it does not isolate the key from other programs running as that same user.
 - **Backup** exports the whole library. The experiment toolbar's export button exports just that experiment and its history. Neither export includes saved credentials.
 - **Import** adds new copies with new IDs, leaving existing experiments intact. Backups are versioned JSON with a 50 MB import limit.
@@ -52,6 +52,8 @@ npm run dist
 ```
 
 `pack` creates the self-contained application directory. `dist` creates the per-user NSIS installer under `release/`. Builds are unsigned personal builds; no code-signing service or automatic updater is configured.
+
+The installer keeps the original `local.jev.playground` app ID so Jev Workshop updates existing installations.
 
 The pinned `better-sqlite3` 13 package includes a Node-API Windows binary. Native rebuilding is intentionally disabled; the binary is unpacked beside the Electron archive. A C++ toolchain is not required for this configuration.
 

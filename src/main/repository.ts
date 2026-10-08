@@ -25,7 +25,7 @@ export class Repository {
     if (version > 1) {
       this.db.close()
       throw new Error(
-        'This library belongs to a newer version of Jev Playground. Install the newer app to open it.'
+        'This library belongs to a newer version of Jev Workshop. Install the newer app to open it.'
       )
     }
     if (version < 1) {

@@ -1,4 +1,5 @@
 import { app, BrowserWindow, dialog, ipcMain, protocol, net } from 'electron'
+import { mkdirSync } from 'node:fs'
 import { join, resolve, sep } from 'node:path'
 import { pathToFileURL, fileURLToPath } from 'node:url'
 import { Repository } from './repository'
@@ -9,10 +10,16 @@ const here = fileURLToPath(new URL('.', import.meta.url))
 protocol.registerSchemesAsPrivileged([
   { scheme: 'jev', privileges: { standard: true, secure: true, supportFetchAPI: true } }
 ])
-app.setName('Jev Playground')
+app.setName('Jev Workshop')
 // Tests use an isolated library; production never accepts this override.
 if (!app.isPackaged && process.env.JEV_TEST_DATA)
   app.setPath('userData', resolve(process.env.JEV_TEST_DATA))
+else {
+  // Keep the original data directory across the rename, including saved credentials.
+  const userData = join(app.getPath('appData'), 'Jev Playground')
+  mkdirSync(userData, { recursive: true })
+  app.setPath('userData', userData)
+}
 const locked = app.requestSingleInstanceLock()
 if (!locked) app.quit()
 else {
@@ -45,7 +52,7 @@ else {
         minHeight: 680,
         show: false,
         backgroundColor: '#101413',
-        title: 'Jev Playground',
+        title: 'Jev Workshop',
         autoHideMenuBar: true,
         icon: app.isPackaged
           ? join(process.resourcesPath, 'icon.png')
@@ -121,7 +128,7 @@ else {
     })
     .catch((error) => {
       dialog.showErrorBox(
-        'Jev Playground could not start',
+        'Jev Workshop could not start',
         error instanceof Error ? error.message : 'Unknown startup error'
       )
       app.exit(1)

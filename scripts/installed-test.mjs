@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { resolve } from 'node:path'
 
 const executablePath = process.argv[2]
-if (!executablePath) throw new Error('Pass the absolute path to the installed Jev Playground.exe')
+if (!executablePath) throw new Error('Pass the absolute path to the installed Jev Workshop.exe')
 const app = await electron.launch({
   executablePath: resolve(executablePath),
   args: [],

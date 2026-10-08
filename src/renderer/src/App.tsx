@@ -88,7 +88,7 @@ export function App() {
     return (
       <div className="startup">
         <FlaskConical size={36} />
-        <h1>Jev Playground</h1>
+        <h1>Jev Workshop</h1>
         {workspace.error ? (
           <>
             <p className="error-text">{workspace.error}</p>
@@ -150,7 +150,7 @@ export function App() {
             <span>Experiment</span>
           </div>
           <div className="topbar-right">
-            <span className="personal-label">PERSONAL PLAYGROUND</span>
+            <span className="personal-label">PERSONAL WORKSHOP</span>
             <button className="connection-button" onClick={() => setSettings(true)}>
               <span className={`status-dot ${library.hasKey ? '' : 'offline'}`} />
               {library.hasKey ? 'API key saved' : 'Connect TypeSafe'}

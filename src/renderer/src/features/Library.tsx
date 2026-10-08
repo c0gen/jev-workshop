@@ -50,7 +50,7 @@ export function Library({
           <strong>
             jev<span className="brand-dot">.</span>
           </strong>
-          <span>PLAYGROUND</span>
+          <span>WORKSHOP</span>
         </div>
         <span className="local-badge">LOCAL</span>
       </div>
